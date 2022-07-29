@@ -1,42 +1,11 @@
-import { Scroll, Timer } from 'phosphor-react'
-import { NavLink } from 'react-router-dom'
-
-import faviconSvg from '../assets/favicon.svg'
+import { Header } from '../../components/Header'
+import { Status } from './components/Status'
 
 export function History() {
   return (
     <div className="flex justify-center items-center w-100 min-h-screen bg-[#1A1A1A] font-roboto">
       <main className="flex flex-col items-center w-full max-w-6xl h-[45rem] px-10 pt-8 pb-10 rounded-lg bg-[#202024]">
-        <header className="flex justify-between items-center w-full mb-16">
-          <picture className="flex w-10 h-10">
-            <img src={faviconSvg} alt="" />
-          </picture>
-
-          <nav className="flex gap-2">
-            <NavLink
-              to="/"
-              title="Timer"
-              className="transition-colors flex justify-center items-center w-12 h-12 border-y-[3px] border-transparent text-[#E1E1E6] hover:border-b-[#00875F] focus:shadow-none"
-            >
-              {({ isActive }) => (
-                <Timer size={24} className={isActive ? 'text-[#00875F]' : ''} />
-              )}
-            </NavLink>
-
-            <NavLink
-              to="/history"
-              title="Histórico"
-              className="transition-colors flex justify-center items-center w-12 h-12 border-y-[3px] border-transparent text-[#E1E1E6] hover:border-b-[#00875F] focus:shadow-none"
-            >
-              {({ isActive }) => (
-                <Scroll
-                  size={24}
-                  className={isActive ? 'text-[#00875F]' : ''}
-                />
-              )}
-            </NavLink>
-          </nav>
-        </header>
+        <Header />
 
         <section className="flex flex-col w-full max-w-[58rem]">
           <h1 className="text-[#E1E1E6] text-2xl font-bold">Meu histórico</h1>
@@ -72,7 +41,7 @@ export function History() {
                     Há cerca de 2 meses
                   </td>
                   <td className="p-4 pr-6 border-t-[#202024] bg-[#29292E] text-sm text-left text-[#E1E1E6] leading-6">
-                    <span>Em andamento</span>
+                    <Status statusColor="green">Concluído</Status>
                   </td>
                 </tr>
 
@@ -87,7 +56,7 @@ export function History() {
                     Há cerca de 2 meses
                   </td>
                   <td className="p-4 pr-6 border-t-[#202024] bg-[#29292E] text-sm text-left text-[#E1E1E6] leading-6">
-                    <span>Em andamento</span>
+                    <Status statusColor="yellow">Em andamento</Status>
                   </td>
                 </tr>
               </tbody>
