@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 1em;
+}
+
+::-webkit-scrollbar-track {
+  background: #29292E;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #29292E;
+  border-radius: 15px;
+  height: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #29292E;
+  max-height: 10px;
+}
+
+::-webkit-calendar-picker-indicator {
+  display: none !important;
+}
+
+:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00875F;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
