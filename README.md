@@ -1,5 +1,7 @@
 <h1 align="center">
     <img alt="Ignite timer" src="./src/assets/favicon.png" />
+    <br>
+    Ignite timer
 </h1>
 
 <p align="center">
