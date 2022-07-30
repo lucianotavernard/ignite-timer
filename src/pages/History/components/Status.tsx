@@ -1,20 +1,16 @@
 import { ReactNode } from 'react'
 
-const STATUS_COLORS = {
-  yellow: '#FBA94C',
-  green: '#00875F',
-  red: '#AB222E'
-} as const
-
 type StatusProps = {
   children: ReactNode
-  statusColor: keyof typeof STATUS_COLORS
+  className: string
 }
 
-export function Status({ children, statusColor }: StatusProps) {
+export function Status({ children, className }: StatusProps) {
   return (
     <span
-      className={`before:content-[''] before:w-2 before:h-2 before:rounded-full before:bg-[${STATUS_COLORS[statusColor]}] flex items-center gap-2`}
+      className={"before:content-[''] before:w-2 before:h-2 before:rounded-full flex items-center gap-2 ".concat(
+        className
+      )}
     >
       {children}
     </span>
